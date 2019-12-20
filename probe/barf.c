@@ -2,9 +2,9 @@
 #define SEC(NAME) __attribute__((section(NAME), used))
 
 
-SEC("tracepoint/syscalls/sys_enter_execve")
+SEC("raw_syscalls/")
 int bpf_prog(void *ctx) {
-  char msg[] = "Hello, BPF World!";
+  char msg[] = "Dum dee dum";
   bpf_trace_printk(msg, sizeof(msg));
   return 0;
 }
