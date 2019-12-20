@@ -1,5 +1,7 @@
-#include <bpf/libbpf.h>
+#include <bpf/bpf.h>
 
-int load_bpf() {
-    return 42;
+int load_bpf_object_by_filename(char *path) {
+
+
+    return 1;
 }

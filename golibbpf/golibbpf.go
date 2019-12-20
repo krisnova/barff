@@ -5,7 +5,15 @@ package golibbpf
 */
 import "C"
 
-func LoadBPF() int {
-    ci := C.load_bpf()
-    return int(ci)
+type BPFProgram struct {
+	FilePath       string
+	LoadReturnCode int
+}
+
+func LoadProgram(filepath string) (*BPFProgram, error) {
+	ci := C.load_bpf_object_by_filename(C.CString(filepath))
+	return &BPFProgram{
+		FilePath:       filepath,
+		LoadReturnCode: int(ci),
+	}, nil
 }

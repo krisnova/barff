@@ -1,4 +1,3 @@
-# barf
+# barff
 
-This is a BPF Application in Rust for Falco (BARF)
-
+BPF Application Relay For Falco (BARFF) 🤮
